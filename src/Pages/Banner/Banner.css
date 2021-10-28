@@ -1,0 +1,17 @@
+.banner-img{
+   background: rgba(0, 0, 0, 0.349);
+   background-image: url('https://i.ibb.co/ygpXLY9/ali-maah-zy-Oe-Em4-Ns-PM-unsplash.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   background-blend-mode: overlay;
+   height: 100vh;
+   width: 100%;
+}
+.pt-200{
+   padding-top: 200px;
+   color: white;
+}
+.banner-title{
+   font-weight: 900;
+}
