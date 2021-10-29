@@ -1,9 +1,16 @@
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 const Tours = () => {
+   const history= useHistory()
+
+  const handleDetails=()=>{
+      const uri= `/tours/id`
+      history.push(uri)
+      console.log('Clicked');
+  }
    return (
       <div>
          <Container className="my-5 text-center">
@@ -19,7 +26,7 @@ const Tours = () => {
                      <Card.Text>
                      INCLUDED: Hotel, Breakfast, Tours, Airport transfers
                      </Card.Text>
-                     <Link><Button className="btn btn-primary ">More Info</Button></Link>
+                     <Button onClick={()=>handleDetails()} className="btn btn-primary ">More Info</Button>
                   </Card.Body>
                   </Card>
                </Col>
