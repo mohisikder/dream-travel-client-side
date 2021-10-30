@@ -10,7 +10,9 @@ import Tours from './Pages/Tours/Tours';
 import PrivateRoute from './Private/PrivateRoute';
 import Login from './Pages/Login/Login';
 import TourDetails from './Pages/TourDetails/TourDetails';
-import AddBooking from './Pages/Admin/AddBooking/AddBooking';
+import AddService from './Pages/Admin/AddService/AddService';
+import MyBooking from './Pages/User/MyBooking';
+import ManageBooking from './Pages/Admin/ManageBooking/ManageBooking';
 
 function App() {
   return (
@@ -27,14 +29,20 @@ function App() {
           <Route exact path="/about">
             <AboutUs/>
           </Route>
-          <PrivateRoute exact path="/tours">
-            <Tours/>
-          </PrivateRoute>
-          <PrivateRoute exact path="/tours/tourDetails/:id">
+          <PrivateRoute exact path="/tours/tourdetails/:id">
             <TourDetails/>
           </PrivateRoute>
-          <PrivateRoute exact path="/booking/addbooking">
-            <AddBooking/>
+          <PrivateRoute exact path="/addservice">
+            <AddService/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/mybooking">
+            <MyBooking/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/managebooking">
+            <ManageBooking/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/tours">
+            <Tours/>
           </PrivateRoute>
           <Route exact path="/login">
             <Login/>

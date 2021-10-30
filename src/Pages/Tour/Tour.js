@@ -7,7 +7,6 @@ const Tour = () => {
    const handleDetails=()=>{
       const uri= `/tours/id`
       history.push(uri)
-      console.log('Clicked');
   }
    return (
       <>

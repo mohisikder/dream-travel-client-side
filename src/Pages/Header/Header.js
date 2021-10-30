@@ -8,7 +8,7 @@ const Header = () => {
    console.log(user);
    return (
       <>
-       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" fixed="top" className="mb-5">
+       <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" fixed="top">
          <Container>
          <Navbar.Brand href="/">DreamTravel</Navbar.Brand>
          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -17,10 +17,13 @@ const Header = () => {
                <Nav.Link as={Link} to="/home">Home</Nav.Link>
                <Nav.Link as={Link} to="/about">About Us</Nav.Link>
                <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
+               <Nav.Link as={Link} to="/addservice">Add Tour</Nav.Link>
+               <Nav.Link as={Link} to="/mybooking">My Booking</Nav.Link>
+               <Nav.Link as={Link} to="/managebooking">Manage Booking</Nav.Link>
             </Nav>
             <Nav>
             <img className="rounded-circle" style={{height:"30px", width:"30px", marginTop:"5px"}} src={user.photoURL} alt="" />
-            <Nav.Link><span className="text-white">{user.displayName || user.email}</span></Nav.Link>
+            <span className="text-white p-2">{user.displayName || user.email}</span>
             {user.email?
                <Button onClick={handleSignOut} variant="light">Logout</Button> 
                :
