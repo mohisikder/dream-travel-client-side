@@ -1,14 +1,15 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
+import { Redirect, Route, useHistory, useLocation } from 'react-router';
 import useAuth from '../Hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const {user , isLoading}= useAuth()
+    let history = useHistory();
+  let location = useLocation();
 
-    if(isLoading) {
-        return "loading"
+  if(isLoading) {
+    return ""
     }
-
     return (
         <>
             <Route

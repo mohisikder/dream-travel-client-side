@@ -9,6 +9,8 @@ import Home from './Pages/Home/Home';
 import Tours from './Pages/Tours/Tours';
 import PrivateRoute from './Private/PrivateRoute';
 import Login from './Pages/Login/Login';
+import TourDetails from './Pages/TourDetails/TourDetails';
+import AddBooking from './Pages/Admin/AddBooking/AddBooking';
 
 function App() {
   return (
@@ -19,17 +21,20 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <PrivateRoute exact path="/home">
+          <Route exact path="/home">
             <Home/>
-          </PrivateRoute>
+          </Route>
           <Route exact path="/about">
             <AboutUs/>
           </Route>
           <PrivateRoute exact path="/tours">
             <Tours/>
           </PrivateRoute>
-          <PrivateRoute exact path="/tours/:id">
-            <Tours/>
+          <PrivateRoute exact path="/tours/tourDetails/:id">
+            <TourDetails/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/booking/addbooking">
+            <AddBooking/>
           </PrivateRoute>
           <Route exact path="/login">
             <Login/>
