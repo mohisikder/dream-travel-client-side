@@ -1,0 +1,7 @@
+.dropdown-toggle::after {
+   display: inline-block;
+   margin-left: .255em;
+   vertical-align: .255em;
+   content: "";
+   border: 0 !important;
+}

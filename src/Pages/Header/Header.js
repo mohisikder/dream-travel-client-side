@@ -17,17 +17,18 @@ const Header = () => {
                <Nav.Link as={Link} to="/home">Home</Nav.Link>
                <Nav.Link as={Link} to="/about">About Us</Nav.Link>
                <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
+
                { user.email && <Nav.Link as={Link} to="/addservice">Add Tour</Nav.Link>}
                { user.email && <Nav.Link as={Link} to="/mybooking">My Booking</Nav.Link>}
                { user.email && <Nav.Link as={Link} to="/managebooking">Manage Booking</Nav.Link>}
                { user.email && <img className="rounded-circle" style={{height:"30px", width:"30px", marginTop:"5px"}} src={user.photoURL} alt="" />}
                { user.email && <span className="text-white p-2">{user.displayName || user.email}</span>}
+
                { user.email?
                   <Button onClick={handleSignOut} variant="light">Logout</Button> 
                   :
                   <Nav.Link className="text-white" as={Link} to="/login">Login</Nav.Link>
                }
-
             </Nav>
          </Navbar.Collapse>
          </Container>
