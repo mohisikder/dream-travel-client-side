@@ -29,7 +29,7 @@ const Tour = ({tour}) => {
                   <Card.Text>{description.slice(0, 80)} </Card.Text>
                   <p><i className="fa fa-map-marker-alt"></i> {place} </p>
                   <h4>$ {price} </h4>
-                  <Button onClick={()=>handleAddToCart()} className="btn btn-primary text-center">Book Now</Button>
+                  <Link to={`/mybooking`}><Button onClick={()=>handleAddToCart()} className="btn btn-primary text-center">Book Now</Button></Link>
                </Card.Body>
             </Card>
          </Col>
