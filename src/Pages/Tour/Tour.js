@@ -1,24 +1,35 @@
 import React from 'react';
+import './Tour.css';
 import { Card, Col, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import useAuth from '../../Hooks/useAuth';
 
-const Tour = () => {
-   const history = useHistory()
-   const handleDetails=()=>{
-      const uri= `/tours/id`
-      history.push(uri)
-  }
+const Tour = ({tour}) => {
+   const {title, img, description, price, place } = tour || {}
+   const {user} = useAuth()
+   // handle add to cart
+   const handleAddToCart = ()=>{
+      const data = (tour);
+      data.email = user.email
+      data.name = user.displayName
+      console.log(data);
+      fetch("https://hidden-waters-89368.herokuapp.com/addbooking",{
+         method:"POST",
+         headers:{'content-type': 'application/json'},
+         body:JSON.stringify(data)
+      })
+   }
+
    return (
       <>
          <Col>
-            <Card className="shadow">
-               <Card.Img variant="top" src="https://i.ibb.co/pfZf35R/image-1.jpg" />
+            <Card className="shadow h-100 card-hover">
+               <Card.Img className="card-img" variant="top" src={img} />
                <Card.Body>
-                  <Card.Title>4 Days Bali Saver</Card.Title>
-                  <Card.Text>
-                  INCLUDED: Hotel, Breakfast, Tours, Airport transfers
-                  </Card.Text>
-                  <Button onClick={()=>handleDetails()} className="btn btn-primary ">Book Now</Button>
+                  <Card.Title>{title}</Card.Title>
+                  <Card.Text>{description.slice(0, 80)} </Card.Text>
+                  <p><i className="fa fa-map-marker-alt"></i> {place} </p>
+                  <h4>$ {price} </h4>
+                  <Button onClick={()=>handleAddToCart()} className="btn btn-primary text-center">Book Now</Button>
                </Card.Body>
             </Card>
          </Col>

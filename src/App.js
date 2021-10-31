@@ -9,7 +9,6 @@ import Home from './Pages/Home/Home';
 import Tours from './Pages/Tours/Tours';
 import PrivateRoute from './Private/PrivateRoute';
 import Login from './Pages/Login/Login';
-import TourDetails from './Pages/TourDetails/TourDetails';
 import AddService from './Pages/Admin/AddService/AddService';
 import MyBooking from './Pages/User/MyBooking';
 import ManageBooking from './Pages/Admin/ManageBooking/ManageBooking';
@@ -29,9 +28,6 @@ function App() {
           <Route exact path="/about">
             <AboutUs/>
           </Route>
-          <PrivateRoute exact path="/tours/tourdetails/:id">
-            <TourDetails/>
-          </PrivateRoute>
           <PrivateRoute exact path="/addservice">
             <AddService/>
           </PrivateRoute>
