@@ -32,8 +32,8 @@ const Footer = () => {
                   <h4>Address</h4>
                   <p>200, D-block, Green lane USA</p>
                   <p>+10 367 467 8934</p>
-                  <p>info@alphamedical.com</p>
-                  <p>www.alphamedical.com</p>
+                  <p>info@dreamtravel.com</p>
+                  <p>www.dreamtravel.com</p>
                </Col>
             </Row>
          </Container>

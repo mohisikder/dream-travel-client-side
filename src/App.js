@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import AddService from './Pages/Admin/AddService/AddService';
 import MyBooking from './Pages/User/MyBooking';
 import ManageBooking from './Pages/Admin/ManageBooking/ManageBooking';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route exact path="/register">
             <Register/>
+          </Route>
+          <Route path="*">
+            <NotFound/>
           </Route>
         </Switch>
         <Footer/>

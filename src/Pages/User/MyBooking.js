@@ -14,7 +14,7 @@ const MyBooking = () => {
 
    // Handle Delete
    const handleDelete = id =>{
-      fetch(`https://hidden-waters-89368.herokuapp.com/deleteMyBooking/${id}`, {
+      fetch(`https://hidden-waters-89368.herokuapp.com/deletebooking/${id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

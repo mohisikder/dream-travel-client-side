@@ -16,8 +16,10 @@ useEffect(()=>{
    return (
       <div className="pt-80">
          <Container>
-            <h1 className="display-5 mt-5 fw-bolder">Popular Tours</h1>
-            <p>Travel is the activity of going from one place to another place.</p>
+            <div className="text-center">
+               <h1 className="display-5 mt-5 fw-bolder">Popular Tours</h1>
+               <p>Travel is the activity of going from one place to another place.</p>
+            </div>
          <Row xs={1} md={3} className="g-4 mt-5">
             {
                tours.map((tour, index)=><Tour
