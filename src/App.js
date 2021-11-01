@@ -13,6 +13,8 @@ import AddService from './Pages/Admin/AddService/AddService';
 import MyBooking from './Pages/User/MyBooking';
 import ManageBooking from './Pages/Admin/ManageBooking/ManageBooking';
 import NotFound from './Pages/NotFound/NotFound';
+import Booking from './Pages/Booking/Booking';
+import Faq from './Pages/Faq/Faq';
 
 function App() {
   return (
@@ -29,8 +31,14 @@ function App() {
           <Route exact path="/about">
             <AboutUs/>
           </Route>
+          <Route exact path="/faq">
+            <Faq/>
+          </Route>
           <PrivateRoute exact path="/addservice">
             <AddService/>
+          </PrivateRoute>
+          <PrivateRoute exact path="/booking">
+            <Booking/>
           </PrivateRoute>
           <PrivateRoute exact path="/mybooking">
             <MyBooking/>

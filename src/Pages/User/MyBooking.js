@@ -5,7 +5,6 @@ import useAuth from '../../Hooks/useAuth';
 const MyBooking = () => {
    const {user} = useAuth()
    const [booking, setBooking] = useState([])
-   const [control, setConrol] = useState(false);
    useEffect(()=>{
       fetch(`https://hidden-waters-89368.herokuapp.com/mybooking/${user?.email}`)
       .then(res=>res.json())
@@ -13,26 +12,27 @@ const MyBooking = () => {
    },[user.email])
 
    // Handle Delete
-   const handleDelete = id =>{
-      fetch(`https://hidden-waters-89368.herokuapp.com/deletebooking/${id}`, {
-      method: "DELETE",
-      headers: { "content-type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          setConrol(!control);
-        } else {
-          setConrol(false);
-        }
-      });
-    console.log(id);
+  const handleBookingDelete = id =>{
+   const proceed = window.confirm('Are you sure, you want to delete?')
+   if(proceed){
+      fetch(`https://hidden-waters-89368.herokuapp.com/booking/${id}`,{
+         method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data =>{
+         if(data.deletedCount > 0){
+            alert('Booking deleted successfully')
+            const remainingUsers = booking.filter(pd => pd?._id)
+            setBooking(remainingUsers)
+         }
+      })
    }
+}
 
    return (
       <>
-         <div className="container">
-            <h1>My Booking {booking?.length}</h1>
+         <div className="container mt-5">
+            <h1 className="text-center py-5">My Booking {booking?.length}</h1>
             <Table striped bordered hover>
             <thead>
                <tr>
@@ -53,7 +53,7 @@ const MyBooking = () => {
                   <td>{pd.image}</td>
                   <td>{pd.price}</td>
                   <button
-                     onClick={() => handleDelete(pd._id)}
+                     onClick={() => handleBookingDelete(pd?._id)}
                      className="btn bg-danger p-2"
                   >
                      Delete

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
@@ -16,6 +16,7 @@ const Header = () => {
                <Nav.Link as={Link} to="/home">Home</Nav.Link>
                <Nav.Link as={Link} to="/about">About Us</Nav.Link>
                <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
+               <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
 
                { user.email && <Nav.Link as={Link} to="/addservice">Add Tour</Nav.Link>}
                { user.email && <Nav.Link as={Link} to="/mybooking">My Booking</Nav.Link>}

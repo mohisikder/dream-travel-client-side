@@ -16,7 +16,7 @@ const AddService = () => {
       const place = placeRef.current.value
 
       const newService = {title, description, img, price, place}
-      fetch(`http://localhost:5000/addservice`,{
+      fetch(`https://hidden-waters-89368.herokuapp.com/addservice`,{
          method: 'POST',
          headers:{'content-type':'application/json'},
          body:JSON.stringify(newService)

@@ -1,14 +1,15 @@
-[Live Link](https://alpha-medical.netlify.app/ "Live link")
+[Live Link](https://dream-travel-react.web.app/ "Live link")
 
-# Alpha Medical
+# Website Name: Dream Travel 
 
-# features  of Alpha Medical
+# features  of Dream Travel Tourism Agency
    
    * User Register
    * User Login
    * Firebase google sign in Authentication
    * Add Booking
    * Manage all booking
+   * Cancel Booking 
 
 # Technology uses
  ## Front-end
@@ -22,4 +23,5 @@
    * NodeJS
    * ExpressJS
    * MongoDB
+   * Firebase
    
